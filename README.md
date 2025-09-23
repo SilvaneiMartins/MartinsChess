@@ -2,10 +2,29 @@
 
 # ♟️ Projeto Xadrez – Humano x Máquina
 
+<p align="center">
+  <img src="./assets/martinschess_logo.png" alt="MartinsChess" width="200"/>
+</p>
+
 Este projeto é um **jogo de xadrez** desenvolvido em **Swift** utilizando **SwiftUI**, com foco na interação entre **humano x máquina**.  
 A proposta é criar uma experiência fluida e intuitiva para dispositivos **iPhone**, explorando design moderno e desempenho eficiente.
 
-![Preview do Projeto](./assets/banner.png)
+Dominando o SwiftUI e a lógica do xadrez para criar um aplicativo de xadrez!
+
+# Feature do xadrez
+
+- Interface de usuário com tabuleiro de xadrez: domominar os layouts do SwiftUI, criar visualizações interativas de pecas e
+  integrar prefeitanente gráficos personalizados de peças de xadrez.
+
+- Implementar as regras do xadrez: codificar a lógica para os movimentos dos peões e todas as regras complexas que tornan tão elegrante.
+
+- Desenvolver oponentes de IA: projetar oponentes de IA inteligentes usando algoritmo Minimax com poda alfa-beta, para que seu aplicativo possa
+  possa desafiá-lo para um jogo inteligência.
+
+- Detectar xeque-mate: desenvolver a lógica para identificar situações de xeque-mate e encerrar jogo com elegância, declarando um vencedor.
+
+- Adicionar um toque de refinamento: aprimorar o aplicativo com histórico de movimentos, um console para informações do jogo e uma
+  experiência de usuário fluida.
 
 ---
 
@@ -60,7 +79,7 @@ As imagens e recursos do projeto estão organizados na pasta assets.
 
 ## 📜 Licença
 
-Este projeto está sob a licença MIT.
+Este projeto está sob a licença MIT [./LICENSE].
 Você pode usá-lo, modificá-lo e distribuí-lo livremente, desde que mantenha os créditos ao autor.
 
 MIT License
