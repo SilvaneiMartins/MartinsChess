@@ -74,7 +74,26 @@ struct Position: Equatable {
         return true
     }
     
-    
+    func pathConsideringCollisions(team: Team, path: [Position], board: Board) -> [Position] {
+        assert(isValidPath(array: path))
+        
+        var result = [Position]()
+        
+        for position in path {
+            switch board[position] {
+            case .none:
+                result.append(position)
+            case .some(let collidingPiece):
+                if collidingPiece.owner == team.opponent {
+                    result.append(position)
+                }
+                
+                return result
+            }
+        }
+        
+        return result
+    }
 }
 
 extension Position: Comparable {
