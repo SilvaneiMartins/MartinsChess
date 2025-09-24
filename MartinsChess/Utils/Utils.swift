@@ -119,3 +119,11 @@ struct Roster {
         }
     }
 }
+
+enum Kind: Hashable {
+    case standard
+    case castle
+    case enPassant
+    case needsPromotion
+    case promotion(Piece)
+}
