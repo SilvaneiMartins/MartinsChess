@@ -55,4 +55,59 @@ struct Grid<Element> {
     }
 }
 
+extension Grid: Collection {
+    func index(after i: IndexPath) -> IndexPath {
+        if (i.column == columnSize - 1) {
+            return IndexPath(row: i.row + 1, column: 0)
+        } else {
+            return IndexPath(row: i.row, column: i.column + 1)
+        }
+    }
+    
+    typealias Index = IndexPath
+    
+    var startIndex: IndexPath {
+        return IndexPath(indexes: [0, 0])
+    }
+    
+    var endIndex: IndexPath {
+        return IndexPath(indexes: [0, columnSize])
+    }
+}
 
+extension Grid: BidirectionalCollection {
+    func index(before i: IndexPath) -> IndexPath {
+        if (i.column == 0) {
+            return IndexPath(row: i.row - 1, column: columnSize - 1)
+        } else {
+            return IndexPath(row: i.row, column: i.column - 1)
+        }
+    }
+}
+
+extension Grid: RandomAccessCollection {
+    
+}
+
+extension Grid: CustomStringConvertible {
+    var description: String {
+        return columns.reduce("") { (currentResult, column) -> String in
+            return currentResult + String(describing: column) + "\n"
+        }
+    }
+}
+
+extension Grid: Equatable where Element: Equatable {
+    
+}
+
+extension Grid: Hashable where Element: Hashable {
+    
+}
+
+extension Grid where Element: ExpressibleByNilLiteral {
+    init(rowSize: Int, columnSize: Int) {
+        let emptyArray = Array<Element>(repeating: nil, count: rowSize * columnSize)
+        self = Grid(rowSize: rowSize, columnSize: columnSize, array: emptyArray)
+    }
+}
