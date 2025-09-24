@@ -127,3 +127,9 @@ enum Kind: Hashable {
     case needsPromotion
     case promotion(Piece)
 }
+
+extension Array where Element: Hashable {
+    func toSet() -> Set<Element> {
+        return Set(self)
+    }
+}
