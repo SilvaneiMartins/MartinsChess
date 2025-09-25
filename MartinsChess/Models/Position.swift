@@ -55,7 +55,7 @@ struct Position: Equatable {
         return adjacentPositions.contains(otherPosition)
     }
     
-    func isValidPath(array: [Position]) -> Bool {
+    static func isValidPath(array: [Position]) -> Bool {
         guard !array.isEmpty else {
             return true
         }
@@ -74,7 +74,11 @@ struct Position: Equatable {
         return true
     }
     
-    func pathConsideringCollisions(team: Team, path: [Position], board: Board) -> [Position] {
+    func fromPerspective(team: Team) -> DirectedPosition {
+        return DirectedPosition(position: self, perspective: team)
+    }
+    
+    static func pathConsideringCollisions(team: Team, path: [Position], board: Board) -> [Position] {
         assert(isValidPath(array: path))
         
         var result = [Position]()

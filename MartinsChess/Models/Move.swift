@@ -13,7 +13,7 @@ struct Move: Hashable {
     let capturedPiece: Piece?
     let kind: Kind
     
-    init(origin: Position, destination: Position, capturedPiece: Piece?, kind: Kind) {
+    init(origin: Position, destination: Position, capturedPiece: Piece?, kind: Kind = .standard) {
         self.origin = origin
         self.destination = destination
         self.capturedPiece = capturedPiece

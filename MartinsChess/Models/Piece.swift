@@ -26,9 +26,14 @@ class Piece {
     }
     
     /// Possivel movimentos
-
+    func possibleMoves(position: Position, game: Game) -> Set<Move> {
+        fatalError("Must be overriden by the subclass")
+    }
     
     /// Posições ameaçadas
+    func thereatenedPositions(position: Position, game: Game) -> BooleanChessGrid {
+        fatalError("Must be overriden by the subclass")
+    }
 }
 
 extension Piece {
