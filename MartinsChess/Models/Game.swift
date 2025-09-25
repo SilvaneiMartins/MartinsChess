@@ -14,6 +14,7 @@ struct Game: Equatable {
     let turn: Team
     
     static let stantard = Game(board: .stantard)
+    static let validator = CheckHandler()
     
     init(board: Board) {
         self = Game(board: board, history: [], turn: .white)
@@ -145,5 +146,9 @@ struct Game: Equatable {
             .first { position, piece in
                 piece is King && piece?.owner == team
             }!.0
+    }
+    
+    func currentMoves() -> Set<Move> {
+        return Game.validator.validMoves(possibleMoves: allMoves(team: turn), game: self)
     }
 }

@@ -45,6 +45,7 @@ protocol ArtificialIntelligence {
     var name: String {get}
     
     /// Calcula a movimentação
+    func nextMoves(game: Game) -> Move
 }
 
 enum Player {

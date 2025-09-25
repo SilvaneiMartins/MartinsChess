@@ -11,7 +11,49 @@ typealias Board = ChessGrid<Piece?>
 
 extension Board {
     static let stantard: Board = {
-        let pieces: [Piece?] = []
+        let pieces: [Piece?] = [
+            Rook(owner: .black),
+            Knight(owner: .black),
+            Bishop(owner: .black),
+            Queen(owner: .black),
+            King(owner: .black),
+            Bishop(owner: .black),
+            Knight(owner: .black),
+            Rook(owner: .black),
+            
+            Pawn(owner: .black),
+            Pawn(owner: .black),
+            Pawn(owner: .black),
+            Pawn(owner: .black),
+            Pawn(owner: .black),
+            Pawn(owner: .black),
+            Pawn(owner: .black),
+            Pawn(owner: .black),
+            
+            nil, nil, nil, nil, nil, nil, nil, nil,
+            nil, nil, nil, nil, nil, nil, nil, nil,
+            nil, nil, nil, nil, nil, nil, nil, nil,
+            nil, nil, nil, nil, nil, nil, nil, nil,
+            
+            Pawn(owner: .white),
+            Pawn(owner: .white),
+            Pawn(owner: .white),
+            Pawn(owner: .white),
+            Pawn(owner: .white),
+            Pawn(owner: .white),
+            Pawn(owner: .white),
+            Pawn(owner: .white),
+            
+            Rook(owner: .white),
+            Knight(owner: .white),
+            Bishop(owner: .white),
+            Queen(owner: .white),
+            King(owner: .white),
+            Bishop(owner: .white),
+            Knight(owner: .white),
+            Rook(owner: .white),
+            
+        ]
         return ChessGrid(array: pieces)
     }()
     
